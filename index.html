@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional painting services for residential and commercial properties. Quality workmanship with attention to detail.">
+  <title>Donswa Painting Services | Top-Class House Painting Experts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #002868;
+      --secondary: #bf0a30;
+      --accent: #f5b301;
+      --light: #ffffff;
+      --dark: #333333;
+      --gray: #f9f9f9;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+    }
+    
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--light);
+    }
+    
+    .btn-primary:hover {
+      background: #9a0828;
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      border: 2px solid var(--light);
+      color: var(--light);
+    }
+    
+    .btn-outline:hover {
+      background: var(--light);
+      color: var(--primary);
+    }
+    
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      margin: 0 auto;
+    }
+    
+    /* Header & Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .header.scrolled {
+      background: rgba(0, 0, 0, 0.9);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--light);
+    }
+    
+    .logo span {
+      color: var(--accent);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-links a {
+      color: var(--light);
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      background: linear-gradient(135deg, var(--primary), #1a439b, #3a6cd9);
+      color: var(--light);
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      opacity: 0.2;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero-content h1 span {
+      color: var(--accent);
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Services Section */
+    .services {
+      background: var(--gray);
+    }
+    
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .card {
+      background: var(--light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-icon {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    
+    .card-content {
+      padding: 30px;
+    }
+    
+    .card-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    
+    /* Portfolio Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 250px;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 40, 104, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    .gallery-overlay h3 {
+      color: var(--light);
+      margin-bottom: 10px;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      background: var(--primary);
+      color: var(--light);
+    }
+    
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .testimonial {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      position: relative;
+    }
+    
+    .testimonial::before {
+      content: '\201C';
+      font-size: 5rem;
+      color: rgba(255, 255, 255, 0.1);
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+    
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .testimonial h4 {
+      color: var(--accent);
+    }
+    
+    .rating {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    
+    /* Contact Section */
+    .contact {
+      background: var(--gray);
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--secondary);
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--light);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+      transition: border 0.3s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: var(--light);
+      padding: 50px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .footer-logo span {
+      color: var(--accent);
+    }
+    
+    .footer-about p {
+      margin-bottom: 20px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    .footer-links h3, .footer-contact h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-links h3::after, .footer-contact h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--accent);
+    }
+    
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    .footer-contact-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .footer-contact-icon {
+      color: var(--accent);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--secondary);
+      color: var(--light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: var(--primary);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      section {
+        padding: 60px 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: left 0.3s ease;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .contact-form {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">Donswa <span>Painting Services</span></a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>We Add Life to Your Walls with <span>Color & Craftsmanship</span></h1>
+      <p>Top-tier residential & commercial painting solutions tailored with passion and precision. Serving Liberia with quality since 2020.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Request a Free Estimate</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Expert Services</h2>
+        <p>Quality painting solutions for every surface and space</p>
+      </div>
+      <div class="service-cards">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3>Interior Painting</h3>
+            <p>Revitalize your indoor spaces with elegant, lasting finishes that echo sophistication and style.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3>Exterior Painting</h3>
+            <p>Stand out in your neighborhood with durable, vibrant, weather-shield exterior coatings.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Color Design & Matching</h3>
+            <p>Our color pros help you choose hues that harmonize with your style and enhance your space.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-paint-roller"></i>
+            </div>
+            <h3>Decorative Finishes</h3>
+            <p>Texture, wallpaper, and custom artwork that make your walls truly one-of-a-kind masterpieces.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Signature Projects</h2>
+        <p>See the transformative power of our work</p>
+      </div>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Modern Living Room">
+          <div class="gallery-overlay">
+            <h3>Modern Living Room</h3>
+            <p>Warm neutral tones with accent wall</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Historic Home Exterior">
+          <div class="gallery-overlay">
+            <h3>Historic Home Exterior</h3>
+            <p>Period-accurate color restoration</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Contemporary Office">
+          <div class="gallery-overlay">
+            <h3>Contemporary Office</h3>
+            <p>Professional color scheme</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Custom Kitchen">
+          <div class="gallery-overlay">
+            <h3>Custom Kitchen</h3>
+            <p>Hand-painted decorative finishes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>What Our Clients Say</h2>
+        <p>Don't just take our word for it</p>
+      </div>
+      <div class="testimonial-cards">
+        <div class="testimonial">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"Donswa Painting Services completely transformed our home. The team was professional, punctual, and paid incredible attention to detail. The quality of their work is exceptional!"</p>
+          <h4>- Jenne</h4>
+          <p class="client-location">New York, USA</p>
+        </div>
+        <div class="testimonial">
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"From the initial consultation to the final walkthrough, the experience was flawless. They delivered beyond our expectations and our commercial property has never looked better."</p>
+          <h4>- Omar Tjane</h4>
+          <p class="client-location">Johnsonville, Liberia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get in Touch Today</h2>
+        <p>Let's discuss your painting project</p>
+      </div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div>
+            <h4>Call Us</h4>
+            <p>+231 775 110 841<br>+231 777 311 487<br>+231886640122</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h4>Email Us</h4>
+            <p>info@dps.com<br>estimates@dps.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h4>Location</h4>
+            <p>Jacob Town<br>Paynesville, Liberia</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-control" placeholder="Your Phone">
+        </div>
+        <div class="form-group">
+          <select class="form-control">
+            <option value="">Select Service</option>
+            <option value="interior">Interior Painting</option>
+            <option value="exterior">Exterior Painting</option>
+            <option value="color">Color Consultation</option>
+            <option value="decorative">Decorative Finishes</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container"> 
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">Donswa <span>Painting Services</span></div>
+          <p>Providing top-quality painting services to Liberia since 2020. Our commitment to excellence and customer satisfaction sets us apart.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Info</h3>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <p>Jacob Town, Paynesville, Liberia</p>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <p>+231 775 110 841<br>+231 777 311 487<br>+231886640122</p>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <p>info@dps.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Donswa Painting Services. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+    
+    // Sticky Header
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Here you would typically send the form data to a server
+      // For demonstration, we'll just show a success message
+      alert('Thank you for your message! We will contact you shortly.');
+      this.reset();
+    });
+    
+    // Initialize header state
+    if (window.scrollY > 100) {
+      header.classList.add('scrolled');
+    }
+  </script>
+</body>
+
+</html>
